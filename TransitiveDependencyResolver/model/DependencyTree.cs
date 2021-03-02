@@ -14,7 +14,7 @@ namespace TransitiveDependencyResolver.model
 
         public void Add(T module, IList<T> dependencies)
         {
-            if (_dictionary.ContainsKey(module))
+            if (!_dictionary.ContainsKey(module))
                 _dictionary.Add(module, new List<T>());
 
             _dictionary[module].AddRange(dependencies);            
