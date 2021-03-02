@@ -16,7 +16,7 @@ namespace TransitiveDependencyResolver.model
             _dictionary.Add(module, dependencies);
         }
 
-        public IEnumerable<T> GetAllModules(T module)
+        public IEnumerable<T> GetAllModules()
         {
             return _dictionary.Keys;
         }

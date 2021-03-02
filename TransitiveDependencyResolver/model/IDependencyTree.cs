@@ -8,6 +8,6 @@ namespace TransitiveDependencyResolver.model
 
         IEnumerable<T> GetDependenciesOf(T module);
 
-        IEnumerable<T> GetAllModules(T module);
+        IEnumerable<T> GetAllModules();
     }
 }
