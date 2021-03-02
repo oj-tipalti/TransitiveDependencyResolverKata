@@ -6,7 +6,7 @@ namespace TransitiveDependencyResolver.model
     {
         void Add(T module, IList<T> dependencies);
 
-        void Add(int module, params int[] dependencies);
+        void Add(int module, params T[] dependencies);
 
         IList<T> GetDependenciesOf(T module);
 
