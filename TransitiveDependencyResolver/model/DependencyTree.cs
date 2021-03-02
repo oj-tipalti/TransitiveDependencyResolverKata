@@ -12,17 +12,12 @@ namespace TransitiveDependencyResolver.model
             _dictionary = new Dictionary<T, List<T>>();
         }
 
-        public void Add(T module, IList<T> dependencies)
+        public void Add(T module, params T[] dependencies)
         {
             if (!_dictionary.ContainsKey(module))
                 _dictionary.Add(module, new List<T>());
 
-            _dictionary[module].AddRange(dependencies);            
-        }
-
-        public void Add(T module, params T[] dependencies)
-        {
-            Add(module, dependencies);
+            _dictionary[module].AddRange(dependencies);
         }
 
         public IList<T> GetAllModules()
