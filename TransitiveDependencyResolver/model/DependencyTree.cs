@@ -20,6 +20,11 @@ namespace TransitiveDependencyResolver.model
             _dictionary[module].AddRange(dependencies);            
         }
 
+        public void Add(int module, params int[] dependencies)
+        {
+            Add(module, dependencies);
+        }
+
         public IList<T> GetAllModules()
         {
             return _dictionary.Keys.ToList();

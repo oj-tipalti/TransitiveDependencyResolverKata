@@ -14,4 +14,8 @@
     <PackageReference Include="NSubstitute" Version="4.2.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\TransitiveDependencyResolver\TransitiveDependencyResolver.csproj" />
+  </ItemGroup>
+
 </Project>
