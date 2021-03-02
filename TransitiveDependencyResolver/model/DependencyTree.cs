@@ -20,7 +20,7 @@ namespace TransitiveDependencyResolver.model
             _dictionary[module].AddRange(dependencies);            
         }
 
-        public void Add(int module, params int[] dependencies)
+        public void Add(int module, params T[] dependencies)
         {
             Add(module, dependencies);
         }
