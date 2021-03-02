@@ -10,7 +10,17 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\DepencyTreeFromJson\DepencyTreeFromJson.csproj" />
     <ProjectReference Include="..\TransitiveDependencyResolver\TransitiveDependencyResolver.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="examples\projectGuids.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="examples\projectNames.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>
