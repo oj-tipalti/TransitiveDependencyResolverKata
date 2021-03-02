@@ -6,7 +6,7 @@ namespace TransitiveDependencyResolver
     {
         public IDependencyTree<T> Resolve<T>(IDependencyTree<T> dependencyTree)
         {
-            return new DependencyTree<T>();
+            return dependencyTree;
         }
     }
 }

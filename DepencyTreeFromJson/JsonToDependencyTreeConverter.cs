@@ -14,7 +14,7 @@ namespace DepencyTreeFromJson
 
             foreach (var branch in dependencyTreeFromJson.branches)
             {
-                dependencyTree.Add(mapFromString(branch.module), branch.dependencies.Select(mapFromString));
+                dependencyTree.Add(mapFromString(branch.module), branch.dependencies.Select(mapFromString).ToArray());
             }
 
             return dependencyTree;
