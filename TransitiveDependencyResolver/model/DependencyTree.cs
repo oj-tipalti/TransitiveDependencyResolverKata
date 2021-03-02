@@ -1,27 +1,31 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace TransitiveDependencyResolver.model
 {
     public class DependencyTree<T> : IDependencyTree<T>
     {
-        private readonly IDictionary<T, IEnumerable<T>> _dictionary;
+        private readonly IDictionary<T, List<T>> _dictionary;
 
         public DependencyTree()
         {
-            _dictionary = new Dictionary<T, IEnumerable<T>>();
+            _dictionary = new Dictionary<T, List<T>>();
         }
 
-        public void Add(T module, IEnumerable<T> dependencies)
+        public void Add(T module, IList<T> dependencies)
         {
-            _dictionary.Add(module, dependencies);
+            if (_dictionary.ContainsKey(module))
+                _dictionary.Add(module, new List<T>());
+
+            _dictionary[module].AddRange(dependencies);            
         }
 
-        public IEnumerable<T> GetAllModules()
+        public IList<T> GetAllModules()
         {
-            return _dictionary.Keys;
+            return _dictionary.Keys.ToList();
         }
 
-        public IEnumerable<T> GetDependenciesOf(T module)
+        public IList<T> GetDependenciesOf(T module)
         {
             return _dictionary[module];
         }
