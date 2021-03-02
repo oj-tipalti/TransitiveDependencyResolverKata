@@ -6,6 +6,8 @@ namespace TransitiveDependencyResolver.model
     {
         void Add(T module, IEnumerable<T> dependencies);
 
-        IEnumerable<T> Get(T module);
+        IEnumerable<T> GetDependenciesOf(T module);
+
+        IEnumerable<T> GetAllModules(T module);
     }
 }
