@@ -6,7 +6,7 @@ namespace TransitiveDependencyResolver.Test
     public class TransitiveDependencyResolverImplementationTest
     {
         [TestMethod]
-        public void TestMethod1()
+        public void TestMethod()
         {
         }
     }
